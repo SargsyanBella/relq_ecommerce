@@ -1,43 +1,81 @@
 import './ProductScreen.css';
+import {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-const ProductScreen = () => {
-    return <div className='productscreen'>
+// Actions
+import { getProductDetails } from '../redux/actions/productActions';
+import { addToCart} from '../redux/actions/cartActions';
+
+
+
+const ProductScreen = ({ history}) => {
+  const [qty, setQty] = useState(1);
+  const dispatch = useDispatch();
+ 
+
+    const productDetails = useSelector((state) => state.getProductDetails);
+    const {loading, error, product} = productDetails;
+    const {id} = useParams();
+
+    useEffect(() => {
+        if (product && id !== product._id) {
+            dispatch(getProductDetails(id));
+        }
+    }, [dispatch, product,id]);
+
+    const addToCartHandler = () => {
+        dispatch(addToCart(product._id, qty));
+        history.push("/cart");
+    };
+
+ return (
+     <div className='productscreen'>
+        {loading ? (
+        <h2>Loading...</h2>
+        ) : error ? (
+       <h2>{error}</h2> 
+       ) : (
+     <>
         <div className='productscreen_left'>
             <div className='left_image'>
-              <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?
-              ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
-              alt="product name" />
+              <img src={product.imageUrl} alt={product.name} />
             </div>
 
             <div className='left_info'>
-                <p className='left_name'>Product1</p>
-                <p>Price: $499.99</p>
-                <p>Description: Lorem ipsum</p>
+                <p className='left_name'>{product.name}</p>
+                <p>Price: ${product.price}</p>
+                <p>Description: {product.description}</p>
             </div>
         </div>
            <div className='productscreen_right'>
              <div className='right_info'>
                 <p>
-                    Price: <span>$499.99</span>
+                    Price: <span>${product.price}</span>
                 </p>
                 <p>
-                    Status: <span>In Stock</span>
+                    Status: <span>{product.countInStock > 0 ? "In Stock" : "out of Stock" }
+                    </span>
                 </p>
                 <p>
                     Qty
-                    <select>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                        {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x+1} value={x+1}>
+                                {x+1}
+                                </option>
+                        ))}
                     </select>
                 </p>
                 <p>
-                    <button type="button">Add To Cart</button>
+                    <button type="button" onClick={addToCartHandler}>Add To Cart</button>
                 </p>
             </div>
            </div>
-        </div>;
+           </>
+       )}
+        </div>
+ );
 };
 
 export default ProductScreen;
