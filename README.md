@@ -12,21 +12,28 @@
 * CSS 3
 ## Features
 * Home screen
+ 
+``` 
     Logo
     Cart(button)
     Shop(button)
     View(button)
     Link
     Hamburger
+    ```
 * Cart screen
+   ``` 
     Procead To Chckout
     Items qty(button)
     Delate(button)
+    ```
 * Product screen
+   ```
     Description
     Price
     Add to cart(button)
     Qty(button)
+   ```
 
 
  
