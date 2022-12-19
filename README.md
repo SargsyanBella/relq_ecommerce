@@ -44,9 +44,12 @@ npm run dev
 To test the application
 
 Add the following file
+
+```
     .env
     port = 1234
     MONGO_URI = yourmongourl
+```
     
   Author-SargsyanBella
     
