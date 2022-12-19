@@ -1,26 +1,16 @@
 # relq_ecommerce
 
 ## Description
-frontend
-This project was built to help you start React,Redux,React-router-dom,axios
+
+
+## Tecnologies
+
+
+* react
+* redux
+* axios
+* CSS 3
 ## Features
-
-
-* responsive
- 
-
-### Installing
-```
-git clone https://github.com/SargsyanBella/relq_ecommerce/new/main?
-cd .. project MERN_ECOMMERCE
-npm install
-```
-
-## Getting Started
-npm run dev
-
-To test the application
-
 * Home screen
     Logo
     Cart(button)
@@ -37,10 +27,26 @@ To test the application
     Price
     Add to cart(button)
     Qty(button)
-    
- .env
-    port
-    MONGO_URI
+
+
+ 
+
+### Installing
+```
+git clone https://github.com/SargsyanBella/relq_ecommerce.git
+cd  project MERN_ECOMMERCE
+npm install
+```
+
+## Getting Started
+npm run dev
+
+To test the application
+
+Add the following file
+    .env
+    port = 1234
+    MONGO_URI = yourmongourl
     
   Author-SargsyanBella
     
