@@ -5,16 +5,16 @@ frontend
 This project was built to help you start React,Redux,React-router-dom,axios
 ## Features
 
-*3 screen
+
 * responsive
  
 
 ### Installing
-
+```
 git clone https://github.com/SargsyanBella/relq_ecommerce/new/main?
 cd .. project MERN_ECOMMERCE
 npm install
-
+```
 
 ## Getting Started
 npm run dev
