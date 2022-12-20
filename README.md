@@ -4,12 +4,21 @@
 
 This responsive webbsite allow you to choose an item, read the description, add or remove it from the cart, as well as choose the quantity and calculate the price
 
-## Tecnologies
+## Frontend Tecnologies
 
-* react
-* redux
-* axios
+* React
+* Redux
+* Axios
 * CSS 3
+
+## Backend Tecnologies
+
+* Node.js
+* Express.js
+* MongoDB
+
+
+
 ## Features
 
 * Home screen
@@ -33,6 +42,11 @@ This responsive webbsite allow you to choose an item, read the description, add 
     Price
     Add to cart(button)
     Qty(button)
+```
+* backend
+```
+    Crud
+    Seedeng
 ```
 
 ### Installing
