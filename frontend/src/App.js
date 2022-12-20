@@ -11,15 +11,19 @@ import CartScreen from './screens/CartScreen';
 import Navbar from './components/Navbar';
 import Backdrop from './components/Backdrop';
 import SideDrawer from './components/SideDrawer';
+import Footer from './components/Footer';
+
 
 function App() {
 
   const [sideToggle,setSideToggle] = useState(false);
   return (
+    <div className='App'>
     <Router>
       < Navbar click={() => setSideToggle(true)} />
       < SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
       < Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
+      
     
       <main >
       
@@ -31,6 +35,9 @@ function App() {
       
       </main>
       </Router>
+      <Footer />
+      </div>
+      
 
   
 
