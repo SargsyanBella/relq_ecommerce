@@ -57,7 +57,8 @@ const updateProduct = async (req, res) => {
 
         const product = await Product.findOneAndUpdate({_id:id},updatedProduct)
         await product.save()
-        res.json(product);
+        res.json(`product with id ${id} updated`);
+       
     }catch (error) {
         console.error(error);
         res.status(500).json({message: "Server Error"});
@@ -72,7 +73,7 @@ const deleteProduct = async (req, res) => {
 
         const deletedProduct = await Product.findOneAndDelete({_id:id})
        
-        res.json(deletedProduct);
+        res.json(`product with id ${id} deleted`);
     }catch (error) {
         console.error(error);
         res.status(500).json({message: "Server Error"});
