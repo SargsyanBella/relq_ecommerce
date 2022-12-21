@@ -71,7 +71,7 @@ const deleteProduct = async (req, res) => {
         const id = req.params.id
         
 
-        const deletedProduct = await Product.findOneAndDelete({_id:id})
+        await Product.findOneAndDelete({_id:id})
        
         res.json(`product with id ${id} deleted`);
     }catch (error) {
