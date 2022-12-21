@@ -34,7 +34,7 @@ This responsive webbsite allow you to choose an item, read the description, add 
 ```
     Procead To Checkout
     Items qty(button)
-    Delate(button)
+    Delete(button)
 ```
 * Product screen
 ```
