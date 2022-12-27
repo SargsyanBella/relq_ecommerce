@@ -1,14 +1,9 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-    font-weight: bold;
-    padding: 1rem 1rem;
-    position: fixed ;
-    bottom: 0;
-   /* background: rgba(214, 210, 210, 0.641);*/
-    height: 110px;
-    width: 100%;
+   
+   width: 100%;
+  position: relative;
+  height: 120px;
+  background-color: #a7a4a4a0
     
   }
 
@@ -28,6 +23,8 @@
 .footer-info {
     display: flex;
     justify-content: center;
+    color: rgb(15, 14, 14);
+    
 }
 
 .footer-info-left, .footer-info-center, .footer-info-right {
@@ -74,11 +71,17 @@
     margin: 0px 20px;
 }
 
+.footer-social-media a {
+    color: aliceblue;
+
+}
+
 @media (max-width: 960px) {
     .footer-info-left, .footer-info-center, .footer-info-right {
       display: flex;
     }
 }
+
 
 
 
